@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	/*font-family: sans-serif;*/
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+
+}
+
+h1{
+	line-height: 3.5rem;
+}
+
+.banner{
+	background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.0)),url(./images/workout.jpg);
+	background-position: center;
+	background-size:cover;
+	overflow-x: hidden;
+	position: relative;
+	margin-bottom: 0.5rem;
+}
+
+.btn{
+	padding: 10px 20px;
+	border: 0;
+	background: #fff;
+	color: #009688;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.banner .dave{
+	padding: 60px 160px;
+	align-content: center;
+	font-size: x-large;
+	/*font-size: 15px;*/
+	font-weight: bold;
+	position: absolute;
+	color: white;
+	font-family:Comic Sans MS, Comic Sans, cursive
+
+}
+
+.btn{
+	z-index: 5;
+}
+
+.btn1{
+	background: #009688;
+	height: 100%;
+	width: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: 0.5s;
+
+}
+.btn:hover .btn1{
+	width: 100%;
+}
+.btn:hover{
+	color: #fff;
+	border: none;
+}
+
+.banner-title{
+	margin: 80px 130px;
+	color: #fff;
+}
+
+.banner-title h1{
+	font-size: 64px;
+	margin-bottom: 30px;
+
+}
+.banner-title h1 .fit{
+	color: #009688;
+}
+.vertical-bar{
+	height: 100%;
+	background: #000;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+.search-icon{
+	height: 60%;
+	width: 80px;
+}
+.search-icon .fa{
+	margin: 45px 23px;
+	display: block;
+	color: #fff;
+	font-size: 30px;
+	cursor: pointer;
+}
+.social-icons{
+	height: 25%;
+	width: 80px;
+	background: #009688;
+	text-align: center;
+	padding-top: 20%;
+	bottom: 0;
+	position: absolute;
+}
+.search-icons .fa , .fab{
+	margin: 8px ;
+	display: block;
+	padding: 4px;
+	color: #fff;
+	font-size: 25px;
+	cursor: pointer;
+}
+.nav-bar .fas{
+	display: none;
+}
+
+/* Clearing floats */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+  color: #009688;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Mini reset, no margins, paddings or bullets */
+.navbar,
+.subnavbar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Main level */
+.navbar {
+  margin: 50px auto;
+  width: 50px;
+  /* http://www.red-team-design.com/horizontal-centering-using-css-fit-content-value */
+  width: -moz-fit-content;
+  /*width: -webkit-fit-content;*/
+  width: fit-content;
+}
+
+.navbar > li {
+  background: #009688;
+  /*background: #34495e;*/
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.navbar a {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+	font-family: Arial, Helvetica, serif;
+  font-size: 14px;
+}
+
+.navbar li:hover {
+  background: #fff;
+}
+.navbar a:hover {
+  color:#009688 ;
+}
+
+.navbar > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+
+/* Dropdown */
+.subnavbar {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.subnavbar li {
+  background-color: #009688;
+  /*background-color: #34495e;*/
+  position: relative;
+  overflow: hidden;
+}
+
+.subnavbar > li > a {
+  padding: 1em 2em;
+}
+
+.subnavbar > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+/* Odd stuff */
+.subnavbar > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.subnavbar > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.subnavbar li ul{
+  display:none;
+}
+.subnavbar li ul:nth-child(odd) > a {
+	transform: skewX(25deg);
+}
+
+
+.subnavbar > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}
+
+/* Even stuff */
+.subnavbar > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.subnavbar > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+
+.subnavbar > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+
+/* Show dropdown */
+.subnavbar,
+.subnavbar li {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+
+.navbar > li:hover .subnavbar,
+.navbar > li:hover .subnavbar li {
+  opacity: 1;
+  visibility: visible;
+  color: #009688;
+}
+
+
+.navbar > li:hover .subnavbar li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);
+}
+
+.navbar > li:hover .subnavbar li ul:nth-child(even){
+  transform: skewX(25deg) translateX(15px);
+}
+
+
+.navbar > li:hover .subnavbar li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);
+}
+
+
+.about, .meals, 
+.team, .contact{
+	padding:4rem 5rem;
+}
+.activities{
+	padding-top: 4rem;
+}
+
+/*Titles*/
+.title{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.titletext{
+	color: #009688;
+	font-weight: 600;
+	font-size: 2em;
+}
+
+
+/*About*/
+.about .row{
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.about .row .col50{
+	position: relative;
+	width: 58%;
+}
+
+.about .row .col50 .imgBx{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.about .row .col50 .imgBx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+}
+
+
+/*Activities*/
+.activities .content{
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	margin-top:40px ;
+}
+
+.activities .content .box{
+	width: 340px;
+	margin: 20px;
+	border: 15px solid #fff;
+	box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+	transition: 0.5s;
+}
+.activities .content .box:hover {
+	transform: translateY(-30px);
+}
+.activities .content .box .imgBx{
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+
+.activities .content .box .imgBx img{
+	position: absolute;
+	top:0 ;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.activities .content .box .text{
+	padding: 15px 0 5px;
+	text-align: center;
+
+}
+
+.activities .content .box h3{
+	font-weight: 400;
+	color: #009688
+}
+
+/*Meals*/
+.meals .content{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-top: 40px;
+}
+.meals .content .box{
+	width: 250px;
+	margin: 15px;
+	transition: 0.5s;
+}
+.meals .content .box:hover {
+	transform: scale(1.1);
+}
+
+.meals .content .box .imgBx{
+	position: relative;
+	width: 100%;
+	height: 300px;
+}
+
+.meals .content .box .imgBx img{
+	position: absolute;
+	top:0 ;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.meals .content .box .text{
+	padding: 15px 0 5px;
+	text-align: center;
+}
+
+.meals .content .box .text h3{
+	font-weight: 400;
+	color: #009688
+}
+
+/*Team*/
+.team{
+	 background-image:linear-gradient(315deg,#009688 0%, #36AD89 74%);
+}
+
+.team h2{
+	color: #fff;
+}
+
+.team .contents{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-top: 40px;
+}
+
+.team .contents .box{
+	width: 200px;
+	height: 400px;
+	margin: 20px 30px;
+	padding: 15px;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 6px;
+	box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+
+.team .contents .box .imgBx{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.team .contents .box .imgBx img{
+	position: absolute;
+	top:0 ;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.team .contents .box .text{
+	text-align: center;
+}
+
+.team .contents .box .text p{
+	color: #009688;
+	font-style: italic;
+}
+
+.team .contents .box .text h3{
+  margin-top: 20px;
+  font-size: 1em;
+  color: #009688;
+  font-weight: 600;
+}
+
+/*Contact*/
+.contact{
+
+}
+
+.contactForm{
+	padding: 75px 50px ;
+	background: #fff;
+	box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+	max-width: 500px;
+	margin-top: 50px;
+}
+
+.contactForm h3{
+	color: #009688;
+	font-size: 1.2em;
+	margin-bottom:20px ;
+	font-weight: 500;
+}
+
+.contactForm .inputBox{
+	position: relative;
+	width: 100%;
+	margin-bottom:20px ;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea{
+  width: 100%;
+  border: 1px solid #555;
+  padding: 10px;
+  color: #009688;
+  outline: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.contactForm .inputBox input[type="submit"]{
+	font-size: 1em;
+	color: #fff;
+	background: #009688;
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none ;
+	letter-spacing: 2px;
+	transition: 0.5s;
+	max-width: 100px;
+	font-weight: 500;
+	border: none;
+	cursor: pointer;
+}
+.copyrightText{
+	padding: 8px 40px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.copyrightText p{
+	color: #333;
+}
+
+.copyrightText a{
+	color: #009688;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+
+
+@media(max-width: 900px){
+	.vertical-bar{
+		display: none;
+	}
+	.banner-title{
+		margin: 80px 40px;
+	}
+	.banner-title h1{
+		font-size: 50px;
+	}
+	.nav-bar{
+		padding: 10px 30px;
+	}
+	.f-bars{
+		position: absolute;
+		right: 20px;
+		top: 10px;
+	}
+	.nav-bar .fas{
+		display: block;
+		color: #fff;
+		margin: 10px 25px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+	/*.nav-links{*/
+	/*	height: 100vh;*/
+	/*	width: 160px;*/
+	/*	background: #000;*/
+	/*	top: 0;*/
+	/*	right: 0;*/
+	/*	position: absolute;*/
+	/*	z-index: 2;*/
+	/*}*/
+	/*.nav-links ul li{*/
+	/*	text-align:center;*/
+	/*	display: block;*/
+	/*}*/
+	.nav-links .btn{
+		text-align:center;
+		float: none;
+		margin-left: 25px;
+		margin-top: 10px;
+	}
+	/*.david{*/
+	/*	height: 100vh;*/
+	/*	background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),url(women-fitness-wallpaper.jpg);*/
+	/*	background-position: center;*/
+	/*	background-size:cover;*/
+	/*	overflow-x: hidden;*/
+	/*	position: relative;*/
+	/*}*/
+ 
+}
+
+
